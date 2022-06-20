@@ -4,13 +4,19 @@ import React, {useEffect, useState} from 'react';
 import axios from 'axios';
 
 function App() {
-  const [hello, setHello] = useState('');
-
+  let [hello, setHello] = useState('');
+  console.log();
   useEffect(() => {
     axios.get('/api/hello')
         .then(response => setHello(response.data))
         .catch(error => console.log(error))
   }, []);
+//     axios.get('/api/hello')
+//         .then(function (response) { console.log(response); })
+//         .catch(function (error) { console.log(error); })
+// },[]);
+
+
 
   return (
       <div>
